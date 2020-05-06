@@ -1,0 +1,9 @@
+*.pyc
+*.bak
+*.tmp
+*.sw*
+*.tmp
+tmp
+
+dl/
+plain/

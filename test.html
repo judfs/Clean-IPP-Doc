@@ -1,0 +1,171 @@
+<html>
+ <body>
+  <div class="book-page-content">
+   <header>
+    <div class="submitted-and-translation clearfix">
+    </div>
+    <h1 class="page__title title" id="page-title" style="display:block;">
+     Fast Fourier Transform Functions
+    </h1>
+    <span class="rdf-meta element-hidden" content="Fast Fourier Transform Functions" property="dc:title">
+    </span>
+    <span class="rdf-meta element-hidden" content="0" datatype="xsd:integer" property="sioc:num_replies">
+    </span>
+   </header>
+   <div class="field field-name-body field-type-text-with-summary field-label-hidden">
+    <div class="field-items">
+     <div class="field-item even" property="content:encoded">
+      <div class="topic-wrapper" id="12ED206C-AEF3-4053-8A18-BE68AE024C2E">
+       <div>
+        <p>
+         The functions described in this section compute the forward and inverse fast Fourier transform of real and complex signals. The FFT is similar to the discrete Fourier transform (DFT) but is significantly faster. The length of the vector transformed by the FFT must be a power of 2.
+        </p>
+        <p>
+         To use the FFT functions, initialize the specification structure which contains such data as tables of twiddle factors. The initialization functions create the specifications for both forward and inverse transforms. The amount of prior calculations is thus reduced and the overall performance increased.
+        </p>
+        <p>
+         The
+         <span class="parmname">
+          hint
+         </span>
+         argument, passed to the initialization functions, suggests using special algorithm, faster or more accurate. The
+         <span class="parmname">
+          flag
+         </span>
+         argument specifies the result normalization method.
+        </p>
+        <p>
+         To initialize the FFT specification structure, use the
+         <a href="/node/507ed861-049b-448f-baf4-fede22ea6458#507ED861-049B-448F-BAF4-FEDE22EA6458">
+          <span class="option">
+           ippsFFTInit_R
+          </span>
+         </a>
+         and
+         <a href="/node/507ed861-049b-448f-baf4-fede22ea6458#507ED861-049B-448F-BAF4-FEDE22EA6458">
+          <span class="option">
+           ippsFFTInit_C
+          </span>
+         </a>
+         functions. Before using these functions, you need to compute the size of the specification structure using
+         <a href="/node/28e7927c-2638-44d7-8ed8-d0c2d65a0cbc#28E7927C-2638-44D7-8ED8-D0C2D65A0CBC">
+          <span class="option">
+           ippsFFTGetSize_R
+          </span>
+         </a>
+         and
+         <a href="/node/28e7927c-2638-44d7-8ed8-d0c2d65a0cbc#28E7927C-2638-44D7-8ED8-D0C2D65A0CBC">
+          <span class="option">
+           ippsFFTGetSize_C
+          </span>
+         </a>
+         , respectively.
+        </p>
+        <p>
+         The complex signal can be represented as a single array containing complex elements, or two separate arrays containing real and imaginary parts. The output result of the FFT can be packed in
+         <span class="keyword">
+          Perm
+         </span>
+         ,
+         <span class="keyword">
+          Pack
+         </span>
+         , or
+         <span class="keyword">
+          CCS
+         </span>
+         format.
+        </p>
+        <p>
+         You can speed up the FFT by using an external buffer. The use of external buffer can improve performance by avoiding allocation and deallocation of internal buffers and storing data in cache. The size of the external buffer is returned by the
+         <a href="/node/507ed861-049b-448f-baf4-fede22ea6458#507ED861-049B-448F-BAF4-FEDE22EA6458">
+          <span class="option">
+           ippsFFTInit_R
+          </span>
+         </a>
+         and
+         <a href="/node/507ed861-049b-448f-baf4-fede22ea6458#507ED861-049B-448F-BAF4-FEDE22EA6458">
+          <span class="option">
+           ippsFFTInit_C
+          </span>
+         </a>
+         functions.
+        </p>
+        <p>
+         If the external buffer is not specified (correspondent parameter is set to
+         <span class="keyword">
+          NULL
+         </span>
+         ), then the FFT function itself allocates the memory needed for operation.
+        </p>
+       </div>
+       <div class="familylinks">
+        <div class="parentlink">
+         <strong>
+          Parent topic:
+         </strong>
+         <a href="/node/be31ead4-48d3-46f9-b06b-10cf7c0686e6">
+          Fourier Transform Functions
+         </a>
+        </div>
+       </div>
+       <div>
+        <ul class="ullinks">
+         <li class="ulchildlink">
+          <a href="/node/507ed861-049b-448f-baf4-fede22ea6458">
+           FFTInit_R, FFTInit_C
+          </a>
+          <br/>
+          Initializes the FFT specification structure for real and complex signals.
+         </li>
+         <li class="ulchildlink">
+          <a href="/node/28e7927c-2638-44d7-8ed8-d0c2d65a0cbc">
+           FFTGetSize_R, FFTGetSize_C
+          </a>
+          <br/>
+          Computes sizes of the FFT specification structure and required working buffers.
+         </li>
+         <li class="ulchildlink">
+          <a href="/node/d63926f5-78d5-4863-8446-0eaa06259cdc">
+           FFTFwd_CToC
+          </a>
+          <br/>
+          Computes the forward fast Fourier transform (FFT) of a complex signal.
+         </li>
+         <li class="ulchildlink">
+          <a href="/node/b43950c4-f20f-4229-98f2-92d0b8587499">
+           FFTInv_CToC
+          </a>
+          <br/>
+          Computes the inverse fast Fourier transform (FFT) of a complex signal.
+         </li>
+         <li class="ulchildlink">
+          <a href="/node/485682ef-ee9a-4e25-8cb1-7a408ceb1a6f">
+           FFTFwd_RToPack, FFTFwd_RToPerm, FFTFwd_RToCCS
+          </a>
+          <br/>
+          Computes the forward or inverse fast Fourier transform (FFT) of a real signal.
+         </li>
+         <li class="ulchildlink">
+          <a href="/node/9c96b620-b60f-4436-b810-e8a60052b8f5">
+           FFTInv_PackToR, FFTInv_PermToR, FFTInv_CCSToR
+          </a>
+          <br/>
+          Computes the inverse fast Fourier transform (FFT) of a real signal.
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="optimization-notice">
+    For more complete information about compiler optimizations, see our
+    <a href="/en-us/articles/optimization-notice#opt-en">
+     Optimization Notice
+    </a>
+    .
+   </div>
+  </div>
+ </body>
+</html>

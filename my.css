@@ -1,0 +1,57 @@
+.dlsyntaxpara {
+    font-family: monospace;
+}
+
+nav {
+    width: 300px
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    border: solid;
+    border-right: none;
+}
+
+nav li {
+    list-style: none;
+    padding: 5px;
+}
+
+.here {
+    background: #ff8d8d;
+}
+
+.mycontainer {
+/*     background: red; */
+    flex-direction: row-reverse;
+    display: flex;
+    
+}
+
+/* ol {
+    background: #0000ff38;
+    border: solid;
+
+}
+
+ol ol {
+    background: green;
+}
+
+ol ol ol {
+    background: #d930d9;
+}
+
+ol ol ol ol {
+    background: white;
+}
+
+ol ol ol ol ol {
+    background: yellow;
+}
+
+ol ol ol ol ol ol {
+    background:#0000ff38;
+} */
+
