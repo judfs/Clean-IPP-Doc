@@ -29,6 +29,11 @@ nav li {
     
 }
 
+#top * {
+    list-style: none;
+    /* padding: 5px; */
+}
+
 /* ol {
     background: #0000ff38;
     border: solid;
